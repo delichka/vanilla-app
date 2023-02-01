@@ -1,11 +1,27 @@
 body {
   font-family: "Raleway", sans-serif;
+  color: black;
 }
 
 .weather-app {
-  border: 2px solid #1374e7;
+  border: 5px solid #1374e7;
   border-radius: 15px;
   margin: 30px auto;
   max-width: 600px;
   padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }

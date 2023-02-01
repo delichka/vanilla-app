@@ -3,11 +3,14 @@ body {
   color: black;
 }
 
+.weather-app-wrapper {
+  margin: 30px auto;
+  max-width: 600px;
+}
+
 .weather-app {
   border: 5px solid #1374e7;
   border-radius: 15px;
-  margin: 30px auto;
-  max-width: 600px;
   padding: 20px;
 }
 
@@ -24,4 +27,22 @@ ul {
 
 li {
   list-style: none;
+}
+
+i {
+  color: #ffe131;
+  font-size: 80px;
+  margin-top: 20px 20px;
+  line-height: 1;
+}
+
+strong {
+  font-size: 80px;
+  margin-left: 20px;
+}
+
+.units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
 }

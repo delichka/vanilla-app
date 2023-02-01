@@ -1,0 +1,11 @@
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+.weather-app {
+  border: 2px solid #1374e7;
+  border-radius: 15px;
+  margin: 30px auto;
+  max-width: 600px;
+  padding: 20px;
+}

@@ -30,7 +30,9 @@ function displayTemp(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
-  tempElement.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemp = response.data.main.temp;
+
+  tempElement.innerHTML = Math.round(celsiusTemp);
   cityElement.innerHTML = response.data.name;
   descrElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -56,7 +58,28 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
+function showFarhTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp");
+  let farhTemp = (celsiusTemp * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(farhTemp);
+}
+
+function showCelsTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = Math.round(celsiusTemp);
+}
+
 let city = "London";
+
+let celsiusTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let farhLink = document.querySelector("#farh-link");
+farhLink.addEventListener("click", showFarhTemp);
+
+let celsLink = document.querySelector("#cels-link");
+farhLink.addEventListener("click", showCelsTemp);

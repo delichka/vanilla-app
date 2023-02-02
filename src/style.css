@@ -48,3 +48,9 @@ strong {
   font-size: 16px;
   top: -34px;
 }
+
+.active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}

@@ -33,11 +33,9 @@ li:first-letter {
   text-transform: capitalize;
 }
 
-i {
-  color: #ffe131;
-  font-size: 80px;
-  margin-top: 20px 20px;
-  line-height: 1;
+img {
+  position: relative;
+  top: -20px;
 }
 
 strong {

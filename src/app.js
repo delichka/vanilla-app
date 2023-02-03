@@ -82,4 +82,4 @@ let farhLink = document.querySelector("#farh-link");
 farhLink.addEventListener("click", showFarhTemp);
 
 let celsLink = document.querySelector("#cels-link");
-farhLink.addEventListener("click", showCelsTemp);
+celsLink.addEventListener("click", showCelsTemp);

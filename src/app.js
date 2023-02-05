@@ -61,12 +61,16 @@ function handleSubmit(event) {
 function showFarhTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temp");
+  celsLink.classList.remove("active");
+  farhLink.classList.add("active");
   let farhTemp = (celsiusTemp * 9) / 5 + 32;
   tempElement.innerHTML = Math.round(farhTemp);
 }
 
 function showCelsTemp(event) {
   event.preventDefault();
+  celsLink.classList.add("active");
+  farhLink.classList.remove("active");
   let tempElement = document.querySelector("#temp");
   tempElement.innerHTML = Math.round(celsiusTemp);
 }

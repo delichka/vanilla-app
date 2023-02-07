@@ -33,7 +33,7 @@ li:first-letter {
   text-transform: capitalize;
 }
 
-img {
+.big-pic {
   position: relative;
   top: -20px;
 }
@@ -53,4 +53,25 @@ strong {
   color: black;
   cursor: default;
   text-decoration: none;
+}
+
+.weather-forecast {
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.6;
+}
+
+.small-pic {
+  text-align: center;
+}
+
+.weather-forecast-temp {
+  font-size: 13px;
+}
+
+.temp-min {
+  opacity: 0.6;
 }

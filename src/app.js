@@ -26,7 +26,7 @@ function formatDay(timestamp) {
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  return day[days];
+  return days[day];
 }
 
 function displayForecast(response) {
@@ -42,22 +42,20 @@ function displayForecast(response) {
         ` 
               <div class="col-2">
                 <div class="weather-forecast-date">${formatDay(
-                  forecastDay.dt
+                  forecastDay.time
                 )}</div>
           
                 <img
-                  src="http://openweathermap.org/img/wn/${
-                    forecastDay.weather[0].icon
-                  }@2x.png"
+                  src="${forecastDay.condition.icon_url}"
                   alt=""
                   width="42"
                 />
                 <div class="weather-forecast-temp">
                   <span class="temp-max">${Math.round(
-                    forecastDay.temp.max
+                    forecastDay.temperature.maximum
                   )}°</span>
                   <span class="temp-min">${Math.round(
-                    forecastDay.temp.min
+                    forecastDay.temperature.minimum
                   )}°</span>
                 </div>
             </div> `;
@@ -71,7 +69,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = `c8abeb45b43149ca1ote502400f8a1fd`;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}&unit=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}&unit=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -114,32 +112,9 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function showFarhTemp(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temp");
-  celsLink.classList.remove("active");
-  farhLink.classList.add("active");
-  let farhTemp = (celsiusTemp * 9) / 5 + 32;
-  tempElement.innerHTML = Math.round(farhTemp);
-}
-
-function showCelsTemp(event) {
-  event.preventDefault();
-  celsLink.classList.add("active");
-  farhLink.classList.remove("active");
-  let tempElement = document.querySelector("#temp");
-  tempElement.innerHTML = Math.round(celsiusTemp);
-}
-
 let city = "London";
-
-let celsiusTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let farhLink = document.querySelector("#farh-link");
-farhLink.addEventListener("click", showFarhTemp);
-
-let celsLink = document.querySelector("#cels-link");
-celsLink.addEventListener("click", showCelsTemp);
+search("Porto");
